@@ -57,8 +57,8 @@
 					</li>
 					<li><a href="#estoques_m" aria-expanded="false" data-toggle="collapse"> <i class="icomoon-file-text"></i>Estoques</a>
 						<ul id="estoques_m" class="collapse list-unstyled ">
-							<li><a href="#">Adicionar</a></li>
-							<li><a href="#">Listar</a></li>
+							<li><a href="index.php?p=novoEstoque">Adicionar</a></li>
+							<li><a href="index.php?p=listarEstoques">Listar</a></li>
 						</ul>
 					</li>
 					<li><a href="#fornecedores_m" aria-expanded="false" data-toggle="collapse"> <i class="icomoon-truck"></i>Fornecedores</a>
