@@ -1,6 +1,6 @@
 <?php 
 
-	class FUNCIONARIOS_MODEL {
+	class ESTOQUE_MODEL {
 		public static $instance;
 		  
 	    private function __construct() {
@@ -9,19 +9,22 @@
 
 	    public static function getInstance() {
 	        if (!isset(self::$instance))
-	            self::$instance = new FUNCIONARIOS_MODEL();
+	            self::$instance = new ESTOQUE_MODEL();
 	  
 	        return self::$instance;
 	    }
 
-	    public function inserir(FUNCIONARIOS $funcionario) {
+	    public function inserir(ESTOQUE $estoque) {
             try {
-                $sql = "INSERT INTO funcionarios (nome, datacontratacao) VALUES (:nome, :datacontratacao)";
+                $sql = "INSERT INTO estoques (livros_idlivros, funcionarios_idfuncionarios, quant_recebida, quant_total, dataatualizacao) VALUES (:idlivro, :idfuncionario, :quant_recebida, :quant_total, :dataatualizacao)";
       
                 $p_sql = CONNECTION::getInstance()->prepare($sql);
       
-                $p_sql->bindValue(":nome", $funcionario->getNome());      
-                $p_sql->bindValue(":datacontratacao", date("Y-m-d"));      
+                $p_sql->bindValue(":idlivro", $estoque->getIdLivro());      
+                $p_sql->bindValue(":idfuncionario", $estoque->getIdFuncionario());      
+                $p_sql->bindValue(":quant_recebida", $estoque->getRecebidos());      
+                $p_sql->bindValue(":quant_total", $estoque->getRecebidos());      
+                $p_sql->bindValue(":dataatualizacao", date("Y-m-d"));      
       
                 return $p_sql->execute();
             } catch (Exception $e) {
@@ -29,15 +32,15 @@
             }
         }
 
-        public function atualizar(FUNCIONARIOS $funcionario) {
+        public function atualizar(ESTOQUE $estoque) {
             try {
                 $sql = "UPDATE funcionarios SET nome = :nome, datacontratacao  = :datacontratacao WHERE idfuncionarios = :id";
       
                 $p_sql = CONNECTION::getInstance()->prepare($sql);
       
-                $p_sql->bindValue(":nome", $funcionario->getNome());      
-                $p_sql->bindValue(":datacontratacao", $funcionario->getDataContratacao());      
-                $p_sql->bindValue(":id", $funcionario->getId());      
+                $p_sql->bindValue(":nome", $estoque->getNome());      
+                $p_sql->bindValue(":datacontratacao", $estoque->getDataContratacao());      
+                $p_sql->bindValue(":id", $estoque->getId());      
       
                 return $p_sql->execute();
             } catch (Exception $e) {
@@ -45,13 +48,13 @@
             }
         }
 
-        public function deletar(FUNCIONARIOS $funcionario) {
+        public function deletar(ESTOQUE $estoque) {
         	try {
         	    $sql = "DELETE FROM funcionarios WHERE idfuncionarios = :id";
         	
         	    $p_sql = CONNECTION::getInstance()->prepare($sql);
         	        
-        	    $p_sql->bindValue(":id", $funcionario->getId());      
+        	    $p_sql->bindValue(":id", $estoque->getId());      
         	
         	    return $p_sql->execute();
         	} catch (Exception $e) {

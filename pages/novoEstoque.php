@@ -29,7 +29,7 @@ $livros = LIVRO_MODEL::getInstance()->buscarLivros();
 										<option value="">Selecione</option>
 										<?php 
 										foreach ($funcionarios as $f) {											
-											echo "<option value=" . $f['idfuncionario'] . ">" . $f['nome'] . "</option>";
+											echo "<option value=" . $f['idfuncionarios'] . ">" . $f['nome'] . "</option>";
 										}
 										?>	
 									</select>
@@ -48,7 +48,7 @@ $livros = LIVRO_MODEL::getInstance()->buscarLivros();
 							</div>
 							<div class="form-group">
 								<label>Quantidade Recebida</label>
-								<input type="number" min="1" placeholder="Quantidade Recebida" name="quantidade-recebida" class="form-control">
+								<input type="number" min="1" placeholder="Quantidade Recebida" name="quantidadeRecebida" class="form-control">
 							</div>														
 							<div class="form-group">       
 								<button class="btn btn-primary">Salvar</button>
