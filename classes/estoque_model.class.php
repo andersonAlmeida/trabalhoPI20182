@@ -34,13 +34,14 @@
 
         public function atualizar(ESTOQUE $estoque) {
             try {
-                $sql = "UPDATE funcionarios SET nome = :nome, datacontratacao  = :datacontratacao WHERE idfuncionarios = :id";
+                $sql = "UPDATE estoques SET estoques_idfuncionarios = :idfuncionarios, estoques_idlivros = :idlivros, dataatualizacao  = :dataatualizacao, quant_total = :total WHERE idfuncionarios = :id";
       
                 $p_sql = CONNECTION::getInstance()->prepare($sql);
       
-                $p_sql->bindValue(":nome", $estoque->getNome());      
-                $p_sql->bindValue(":datacontratacao", $estoque->getDataContratacao());      
                 $p_sql->bindValue(":id", $estoque->getId());      
+                $p_sql->bindValue(":idfuncionarios", $estoque->getNome());      
+                $p_sql->bindValue(":total", $estoque->getTotal());      
+                $p_sql->bindValue(":dataatualizacao", date("Y-m-d"));      
       
                 return $p_sql->execute();
             } catch (Exception $e) {
@@ -50,7 +51,7 @@
 
         public function deletar(ESTOQUE $estoque) {
         	try {
-        	    $sql = "DELETE FROM funcionarios WHERE idfuncionarios = :id";
+        	    $sql = "DELETE FROM estoques WHERE idestoques = :id";
         	
         	    $p_sql = CONNECTION::getInstance()->prepare($sql);
         	        
