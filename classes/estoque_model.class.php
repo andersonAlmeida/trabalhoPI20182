@@ -62,9 +62,11 @@
         	}
         }
 
-        public function buscarFuncionarios() {
+        public function buscarEstoques() {
             try {
-                $sql = "SELECT * FROM funcionarios ORDER BY nome";
+                $sql = "SELECT * FROM estoques e, livros l, funcionarios f
+                        WHERE e.livros_idlivros = l.idlivros AND e.funcionarios_idfuncionarios = f.idfuncionarios 
+                        ORDER BY titulo";
                 $result = CONNECTION::getInstance()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
 
@@ -74,9 +76,10 @@
             }
         }
 
-        public function buscarFuncionario($id) {
+        public function buscarEstoque($id) {
             try {
-                $sql = "SELECT * FROM funcionarios WHERE idfuncionarios = $id";
+                $sql = "SELECT e.idestoques, e.quant_total, e.quant_recebida, e.livros_idlivros, e.funcionarios_idfuncionarios, l.idlivros, l.titulo, f.idfuncionarios, f.nome FROM estoques e, livros l, funcionarios f
+                        WHERE e.livros_idlivros = l.idlivros AND e.funcionarios_idfuncionarios = f.idfuncionarios AND idestoques = $id";
                 $result = CONNECTION::getInstance()->query($sql);
                 $lista = $result->fetchAll(PDO::FETCH_ASSOC);
 
