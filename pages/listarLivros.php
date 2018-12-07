@@ -49,7 +49,7 @@
 								<datalist id="fornecedor_idfornecedor">									
 									<?php 
 										foreach ($fornecedores as $f) {											
-											echo "<option value=" . $f['nome'] . ">" . $f['nome'] . "</option>";
+											echo "<option value='" . $f['nome'] . "'>" . $f['nome'] . "</option>";
 										}
 									?>	
 								</datalist>

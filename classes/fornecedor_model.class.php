@@ -27,7 +27,7 @@
       
                 return $p_sql->execute();
             } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
             }
         }
 
@@ -45,7 +45,7 @@
       
                 return $p_sql->execute();
             } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
             }
         }
 
@@ -59,7 +59,7 @@
         	
         	    return $p_sql->execute();
         	} catch (Exception $e) {
-        	    print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+        	    print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
         	}
         }
 
@@ -71,7 +71,7 @@
 
                 return $lista;
             } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
             }
         }
 
@@ -83,7 +83,7 @@
 
                 return $lista;
             } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
             }
         }
 
@@ -111,7 +111,7 @@
 
                 return $lista;
             } catch (Exception $e) {
-                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.";
             }
         }
 
