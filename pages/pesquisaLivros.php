@@ -33,7 +33,7 @@
 			<h1>Resultado para busca de <?php echo $busca ?></h1>
 		</header>
 		<div class="row">			
-			<div class="col-lg-8">
+			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header d-flex align-items-center">
 						<h4>Pesquisar</h4>
@@ -78,7 +78,7 @@
 			</div>				
 		</div>
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
 						<h4>Tabela de Livros</h4>

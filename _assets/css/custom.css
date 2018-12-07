@@ -37,3 +37,8 @@
 .deleta {
   color: #ca0000;
 }
+
+.form-inline .form-group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
