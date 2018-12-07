@@ -2,13 +2,27 @@
 	include 'classes/fornecedor.class.php';
 	include 'classes/fornecedor_model.class.php';
 
-	$fornecedores = FORNECEDOR_MODEL::getInstance()->buscarFornecedores();
+	$fornecedores = FORNECEDOR_MODEL::getInstance()->pesquisar($_POST);	
+	$busca = "";
+	$tem_resultado = false;
+
+	foreach ($_POST as $val) {
+		if($tem_resultado) {
+			if( $val != "" )
+				$busca .= ", " . $val;	
+		} else {
+			if( $val != "" ) {
+				$busca .= $val;			
+				$tem_resultado = true;		
+			}
+		}
+	}
 ?>	
 
 <section id="lista-func">
 	<div class="container-fluid">
 		<header>
-			<h1>Fornecedores</h1>
+			<h1>Resultado para busca de <?php echo $busca ?></h1>
 		</header>
 		<div class="row">			
 			<div class="col-lg-8">

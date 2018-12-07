@@ -31,7 +31,7 @@ $estoque = ESTOQUE_MODEL::getInstance()->buscarEstoque($id);
 							<div class="form-group">
 								<label>Selecionar Funcionário</label>
 								<div class="col-sm-14 mb-3">
-									<select name="funcionario" class="form-control">
+									<select name="funcionario" class="form-control" required>
 										<option value="">Selecione</option>
 										<?php 
 										foreach ($funcionarios as $f) {											
@@ -47,7 +47,7 @@ $estoque = ESTOQUE_MODEL::getInstance()->buscarEstoque($id);
 							</div>
 							<div class="form-group">
 								<label>Selecionar Livro</label>
-								<select name="livro" class="form-control">
+								<select name="livro" class="form-control" required>
 									<option value="">Selecione</option>
 									<?php 
 									foreach ($livros as $l) {											
@@ -62,15 +62,15 @@ $estoque = ESTOQUE_MODEL::getInstance()->buscarEstoque($id);
 							</div>
 							<!-- <div class="form-group">
 								<label>Ano de Publicação</label>
-								<input type="date" placeholder="Ano de Publicação" name="ano-publicacao" class="form-control" value="<?php //echo $livros[0]['anopublicacao'] ?>">
+								<input type="date" placeholder="Ano de Publicação" name="ano-publicacao" class="form-control" required value="<?php //echo $livros[0]['anopublicacao'] ?>">
 							</div> -->
 							<div class="form-group">
 								<label>Quantidade Total</label>
-								<input type="number" min="1" max="<?php echo $estoque[0]['quant_recebida'] ?>" placeholder="Quantidade Total" name="quantidadeTotal" class="form-control" value="<?php echo $estoque[0]['quant_total'] ?>">
+								<input type="number" min="1" max="<?php echo $estoque[0]['quant_recebida'] ?>" placeholder="Quantidade Total" name="quantidadeTotal" class="form-control" required value="<?php echo $estoque[0]['quant_total'] ?>">
 							</div>	
 							<div class="form-group">
 								<label>Quantidade Recebida</label>
-								<input type="number" min="1" placeholder="Quantidade Recebida" name="quantidadeTotal" class="form-control" value="<?php echo $estoque[0]['quant_recebida'] ?>" readonly>
+								<input type="number" min="1" placeholder="Quantidade Recebida" name="quantidadeRecebida" class="form-control" required value="<?php echo $estoque[0]['quant_recebida'] ?>" readonly>
 							</div>	
 							<div class="form-group">       
 								<button class="btn btn-primary">Salvar</button>

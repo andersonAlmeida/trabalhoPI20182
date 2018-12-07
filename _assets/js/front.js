@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    // Main Template Color
-    var brandPrimary = '#33b35a';
-
     // ------------------------------------------------------- //
     // Side Navbar Functionality
     // ------------------------------------------------------ //
@@ -18,4 +15,15 @@ $(document).ready(function () {
         }
     });
 
+
+    // Confirmação deleta
+    $(".deleta").on("click", function(e) {
+        e.preventDefault();
+
+        var r = confirm("Você tem certeza que deseja excluir esse registro?");
+
+        if(r === true) {
+            location.href = e.currentTarget.href;
+        }
+    });
 });

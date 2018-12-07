@@ -2,13 +2,37 @@
 	include 'classes/funcionarios.class.php';
 	include 'classes/funcionarios_model.class.php';
 
-	$funcionarios = FUNCIONARIOS_MODEL::getInstance()->buscarFuncionarios();
+	$funcionarios = FUNCIONARIOS_MODEL::getInstance()->pesquisar($_POST);	
+	$busca = "";
+	$tem_resultado = false;
+
+	foreach ($_POST as $campo => $val) {
+		if($tem_resultado) {
+			if( $val != "" ) {
+				if($campo != 'datacontratacao') {
+					$busca .= ", " . $val;	
+				} else {
+					$busca .= ", " . date("d/m/Y", strtotime($val));	
+				}
+			}
+		} else {
+			if( $val != "" ) {
+				if($campo != 'datacontratacao') {
+					$busca .= $val;			
+				} else {
+					$busca .= date("d/m/Y", strtotime($val));
+				}
+
+				$tem_resultado = true;		
+			}
+		}
+	}
 ?>	
 
 <section id="lista-func">
 	<div class="container-fluid">
 		<header>
-			<h1>Funcionários</h1>
+			<h1>Resultado para busca de <?php echo $busca ?></h1>
 		</header>
 		<div class="row">			
 			<div class="col-lg-8">

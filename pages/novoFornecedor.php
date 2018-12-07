@@ -16,19 +16,19 @@
 			      <form action="salvaFornecedor.php" method="POST">
 			        <div class="form-group">
 			          <label>Nome do fornecedor</label>
-			          <input type="text" placeholder="Nome" name="nome" class="form-control">
+			          <input type="text" placeholder="Nome" name="nome" class="form-control" required>
 			        </div>
 			        <div class="form-group">
 			          <label>Endereço</label>
-			          <input type="text" placeholder="Endereço" name="endereco" class="form-control">
+			          <input type="text" placeholder="Endereço" name="endereco" class="form-control" required>
 			        </div>
 			        <div class="form-group">
 			          <label>Cidade</label>
-			          <input type="text" placeholder="Cidade" name="cidade" class="form-control">
+			          <input type="text" placeholder="Cidade" name="cidade" class="form-control" required>
 			        </div>
 			        <div class="form-group">
 			          <label>Telefone</label>
-			          <input type="tel" placeholder="Telefone" name="telefone" class="form-control">
+			          <input type="tel" placeholder="Telefone" name="telefone" class="form-control" required>
 			        </div>
 			        <div class="form-group">       
 			          <button class="btn btn-primary">Salvar</button>

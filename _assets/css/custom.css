@@ -33,3 +33,7 @@
 .icomoon-truck:before {
   content: "\e903";
 }
+
+.deleta {
+  color: #ca0000;
+}

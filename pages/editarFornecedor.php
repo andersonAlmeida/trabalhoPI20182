@@ -23,19 +23,19 @@
 			      	<input type="hidden" name="id" value="<?php echo $fornecedor[0]['idfornecedores'] ?>">
 					<div class="form-group">
 					  <label>Nome do fornecedor</label>
-					  <input type="text" placeholder="Nome" name="nome" class="form-control" value="<?php echo $fornecedor[0]['nome'] ?>">
+					  <input type="text" placeholder="Nome" name="nome" class="form-control" required value="<?php echo $fornecedor[0]['nome'] ?>">
 					</div>
 					<div class="form-group">
 					  <label>Endereço</label>
-					  <input type="text" placeholder="Endereço" name="endereco" class="form-control" value="<?php echo $fornecedor[0]['endereco'] ?>">
+					  <input type="text" placeholder="Endereço" name="endereco" class="form-control" required value="<?php echo $fornecedor[0]['endereco'] ?>">
 					</div>
 					<div class="form-group">
 					  <label>Cidade</label>
-					  <input type="text" placeholder="Cidade" name="cidade" class="form-control" value="<?php echo $fornecedor[0]['cidade'] ?>">
+					  <input type="text" placeholder="Cidade" name="cidade" class="form-control" required value="<?php echo $fornecedor[0]['cidade'] ?>">
 					</div>
 					<div class="form-group">
 					  <label>Telefone</label>
-					  <input type="tel" placeholder="Telefone" name="telefone" class="form-control" value="<?php echo $fornecedor[0]['telefone'] ?>">
+					  <input type="tel" placeholder="Telefone" name="telefone" class="form-control" required value="<?php echo $fornecedor[0]['telefone'] ?>">
 					</div>
 
 			        <div class="form-group">       

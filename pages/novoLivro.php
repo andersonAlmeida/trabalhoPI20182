@@ -21,24 +21,24 @@ $fornecedores = FORNECEDOR_MODEL::getInstance()->buscarFornecedores();
 						<form action="salvaLivro.php" method="POST">
 							<div class="form-group">
 								<label>Título do Livro</label>
-								<input type="text" placeholder="Título" name="titulo" class="form-control">
+								<input type="text" placeholder="Título" name="titulo" class="form-control" required>
 							</div>
 							<div class="form-group">
 								<label>Ano de Publicação</label>
-								<input type="text" placeholder="Ano de Publicação" name="ano-publicacao" class="form-control">
+								<input type="text" placeholder="Ano de Publicação" name="ano-publicacao" class="form-control" required>
 							</div>
 							<div class="form-group">
 								<label>Edição</label>
-								<input type="text" placeholder="Edição" name="edicao" class="form-control">
+								<input type="text" placeholder="Edição" name="edicao" class="form-control" required>
 							</div>
 							<div class="form-group">
 								<label>Editora</label>
-								<input type="tel" placeholder="Editora" name="editora" class="form-control">
+								<input type="tel" placeholder="Editora" name="editora" class="form-control" required>
 							</div>
 							<div class="form-group">
 								<label>Fornecedor</label>
 								<div class="col-sm-14 mb-3">
-									<select name="fornecedor" class="form-control">
+									<select name="fornecedor" class="form-control" required>
 										<option value="">Selecione</option>
 										<?php 
 										foreach ($fornecedores as $f) {											

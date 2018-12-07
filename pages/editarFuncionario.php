@@ -23,11 +23,11 @@
 			      	<input type="hidden" name="id" value="<?php echo $funcionario[0]['idfuncionarios'] ?>">
 			        <div class="form-group">
 			          <label>Nome do funcionário</label>
-			          <input type="text" placeholder="Nome" name="nome" class="form-control" value="<?php echo $funcionario[0]['nome'] ?>">
+			          <input type="text" placeholder="Nome" name="nome" class="form-control" required value="<?php echo $funcionario[0]['nome'] ?>">
 			        </div>
 			        <div class="form-group">
 			          <label>Data da Contratação</label>
-			          <input type="date" placeholder="Data" name="data" class="form-control" value="<?php echo $funcionario[0]['datacontratacao'] ?>">
+			          <input type="date" placeholder="Data" name="data" class="form-control" required value="<?php echo $funcionario[0]['datacontratacao'] ?>">
 			        </div>
 			        <div class="form-group">       
 			          <button class="btn btn-primary">Salvar</button>

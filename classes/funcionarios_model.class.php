@@ -83,6 +83,34 @@
             }
         }
 
+        public function pesquisar($campos) {
+            try {
+                $where = "";
+                $temCondicao = false;
+
+                foreach ($campos as $campo => $val) {
+                    if($val != '') {
+                        if( !$temCondicao ) {
+                            $where .= "WHERE $campo LIKE '%" . $val . "%'";
+                            $temCondicao = true; 
+                        } else {
+                            $where .= " AND $campo LIKE '%" . $val . "%'";                            
+                        }
+                    }
+                }
+
+
+                $sql = "SELECT * FROM funcionarios $where";
+
+                $result = CONNECTION::getInstance()->query($sql);
+                $lista = $result->fetchAll(PDO::FETCH_ASSOC);
+
+                return $lista;
+            } catch (Exception $e) {
+                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+            }
+        }
+
 	}
 
  ?>

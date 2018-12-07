@@ -5,17 +5,32 @@
 	include 'classes/fornecedor_model.class.php';
 
 	$fornecedores = FORNECEDOR_MODEL::getInstance()->buscarFornecedores();
-
 	$livros = LIVRO_MODEL::getInstance()->buscarLivros();
+	$livrosBusca = LIVRO_MODEL::getInstance()->pesquisar($_POST);	
 
-	// var_dump($livros);
+	$busca = "";
+	$tem_resultado = false;
+
+	foreach ($_POST as $val) {
+		if($tem_resultado) {
+			if( $val != "" )
+				$busca .= ", " . $val;	
+		} else {
+			if( $val != "" ) {
+				$busca .= $val;			
+				$tem_resultado = true;		
+			}
+		}
+	}
+
+	// var_dump($livrosBusca);
 	// die();
 ?>	
 
 <section id="lista-func">
 	<div class="container-fluid">
 		<header>
-			<h1>Livros</h1>
+			<h1>Resultado para busca de <?php echo $busca ?></h1>
 		</header>
 		<div class="row">			
 			<div class="col-lg-8">
@@ -28,9 +43,9 @@
 							<div class="form-group">								
 								<input list="pesqTitulo" type="text" placeholder="Título" name="titulo" class="mr-3 form-control">
 								<datalist id="pesqTitulo">
-									<?php 										
+									<?php 
 										foreach ($livros as $l) {
-											echo "<option value='" . $l['titulo'] . "'>" . $l['titulo'] . "</option>";											
+											echo "<option value='" . $l['titulo'] . "'>" . $l['titulo'] . "</option>";
 										}
 									?>	
 								</datalist>
@@ -84,7 +99,7 @@
 								</thead>
 								<tbody>
 									<?php 
-										foreach ($livros as $l) {											
+										foreach ($livrosBusca as $l) {											
 											echo "	<tr>
 														<td>" . $l['titulo'] . "</td>														
 														<td>" . $l['anopublicacao'] . "</td>														

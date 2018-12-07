@@ -16,7 +16,7 @@
 			      <form action="salvaFuncionario.php" method="POST">
 			        <div class="form-group">
 			          <label>Nome do funcionário</label>
-			          <input type="nome" placeholder="Nome" name="nome" class="form-control">
+			          <input type="nome" placeholder="Nome" name="nome" class="form-control" required>
 			        </div>
 			        <div class="form-group">       
 			          <button class="btn btn-primary">Salvar</button>

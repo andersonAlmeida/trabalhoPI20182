@@ -5,16 +5,38 @@
 	// include 'classes/funcionarios_model.class.php';
 	include 'classes/estoque.class.php';
 	include 'classes/estoque_model.class.php';
+	
+	$estoques = ESTOQUE_MODEL::getInstance()->pesquisar($_POST);	
+	$busca = "";
+	$tem_resultado = false;
 
-	$estoques = ESTOQUE_MODEL::getInstance()->buscarEstoques();
-	// $livros = LIVRO_MODEL::getInstance()->buscarLivros();
-	// $livros = LIVRO_MODEL::getInstance()->buscarLivros();
+	foreach ($_POST as $campo => $val) {
+		if($tem_resultado) {
+			if( $val != "" ) {
+				if($campo != 'dataatualizacao') {
+					$busca .= ", " . $val;	
+				} else {
+					$busca .= ", " . date("d/m/Y", strtotime($val));	
+				}
+			}
+		} else {
+			if( $val != "" ) {
+				if($campo != 'dataatualizacao') {
+					$busca .= $val;			
+				} else {
+					$busca .= date("d/m/Y", strtotime($val));
+				}
+
+				$tem_resultado = true;		
+			}
+		}
+	}
 ?>	
 
 <section id="lista-func">
 	<div class="container-fluid">
 		<header>
-			<h1>Estoques</h1>
+			<h1>Resultado para busca de <?php echo $busca ?></h1>
 		</header>
 		<div class="row">			
 			<div class="col-lg-12">
